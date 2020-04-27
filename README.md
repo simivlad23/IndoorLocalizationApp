@@ -7,8 +7,7 @@
 To install this example application, run the following commands:
 
 ```bash
-git clone https://github.com/oktadeveloper/jhipster-microservices-example.git
-cd jhipster-microservices-example
+git clone https://github.com/simivlad23/IndoorLocalizationApp.git
 ```
 
 1. Start the registry by running `./mvnw ` in the `jhipster-registry` directory.
