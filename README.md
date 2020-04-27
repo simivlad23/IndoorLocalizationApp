@@ -19,4 +19,6 @@ git clone https://github.com/simivlad23/IndoorLocalizationApp.git
     ./mvnw 
     ``` 
     
+ This application is configured for Service Discovery and Configuration with the JHipster-Registry. On launch, it will refuse to start if it is not able to connect to the JHipster-Registry at http://localhost:8761. 
+ 
  You should be able to see the `gateway` app at <http://localhost:8080> and the indoor features (from the `indoortracker` app)
