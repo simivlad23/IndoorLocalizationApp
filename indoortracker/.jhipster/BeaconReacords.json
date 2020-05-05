@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "indoortracker",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "timeReacord",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "readRssi",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "meanRssi",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "smootRssi",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "smootDistance",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "meanDistance",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20200505151551",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "beacon_reacords",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll",
+    "microserviceName": "indoortracker"
+}

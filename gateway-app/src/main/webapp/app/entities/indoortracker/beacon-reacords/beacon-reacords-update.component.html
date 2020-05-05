@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-beacon-reacords-heading">Create or edit a Beacon Reacords</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_timeReacord">Time Reacord</label>
+                    <div class="input-group">
+                        <input id="field_timeReacord" type="text" class="form-control" name="timeReacord" ngbDatepicker #timeReacordDp="ngbDatepicker" formControlName="timeReacord"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="timeReacordDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_readRssi">Read Rssi</label>
+                    <input type="number" class="form-control" name="readRssi" id="field_readRssi"
+                           formControlName="readRssi"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_meanRssi">Mean Rssi</label>
+                    <input type="number" class="form-control" name="meanRssi" id="field_meanRssi"
+                           formControlName="meanRssi"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_smootRssi">Smoot Rssi</label>
+                    <input type="number" class="form-control" name="smootRssi" id="field_smootRssi"
+                           formControlName="smootRssi"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_smootDistance">Smoot Distance</label>
+                    <input type="number" class="form-control" name="smootDistance" id="field_smootDistance"
+                           formControlName="smootDistance"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_meanDistance">Mean Distance</label>
+                    <input type="number" class="form-control" name="meanDistance" id="field_meanDistance"
+                           formControlName="meanDistance"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

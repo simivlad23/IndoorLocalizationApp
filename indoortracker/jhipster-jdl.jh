@@ -1,0 +1,21 @@
+entity Beacon {
+  name String required,
+  address String required,
+  txpower Integer required,
+  advertisingInterval Integer required
+}
+entity BeaconsRecordData {
+  timeRecord LocalDate required,
+  readRssi Double required,
+  meanRssi Double required,
+  smootRssi Double required,
+  smootDistance Double required,
+  meanDistance Double required
+}
+paginate Beacon, BeaconsRecordData with infinite-scroll
+paginate Beacon, BeaconsRecordData with pagination
+
+microservice Beacon, BeaconRecordData with indoortracker
+
+
+
