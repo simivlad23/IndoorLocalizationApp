@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span>Beacon Reacords</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-beacon-reacords" [routerLink]="['/beacon-reacords/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Beacon Reacords
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="beaconReacords?.length === 0">
+        <span>No beaconReacords found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="beaconReacords?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span>ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="timeReacord"><span>Time Reacord</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="readRssi"><span>Read Rssi</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="meanRssi"><span>Mean Rssi</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="smootRssi"><span>Smoot Rssi</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="smootDistance"><span>Smoot Distance</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="meanDistance"><span>Mean Distance</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let beaconReacords of beaconReacords ;trackBy: trackId">
+                    <td><a [routerLink]="['/beacon-reacords', beaconReacords.id, 'view']">{{ beaconReacords.id }}</a></td>
+                    <td>{{ beaconReacords.timeReacord | date:'mediumDate' }}</td>
+                    <td>{{ beaconReacords.readRssi }}</td>
+                    <td>{{ beaconReacords.meanRssi }}</td>
+                    <td>{{ beaconReacords.smootRssi }}</td>
+                    <td>{{ beaconReacords.smootDistance }}</td>
+                    <td>{{ beaconReacords.meanDistance }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/beacon-reacords', beaconReacords.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/beacon-reacords', beaconReacords.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(beaconReacords)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

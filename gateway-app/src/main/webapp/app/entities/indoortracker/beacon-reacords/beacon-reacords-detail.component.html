@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="beaconReacords">
+            <h2><span>Beacon Reacords</span> {{ beaconReacords.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Time Reacord</span></dt>
+                <dd>
+                    <span>{{ beaconReacords.timeReacord }}</span>
+                </dd>
+                <dt><span>Read Rssi</span></dt>
+                <dd>
+                    <span>{{ beaconReacords.readRssi }}</span>
+                </dd>
+                <dt><span>Mean Rssi</span></dt>
+                <dd>
+                    <span>{{ beaconReacords.meanRssi }}</span>
+                </dd>
+                <dt><span>Smoot Rssi</span></dt>
+                <dd>
+                    <span>{{ beaconReacords.smootRssi }}</span>
+                </dd>
+                <dt><span>Smoot Distance</span></dt>
+                <dd>
+                    <span>{{ beaconReacords.smootDistance }}</span>
+                </dd>
+                <dt><span>Mean Distance</span></dt>
+                <dd>
+                    <span>{{ beaconReacords.meanDistance }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/beacon-reacords', beaconReacords.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
