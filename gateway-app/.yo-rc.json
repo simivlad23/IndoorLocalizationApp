@@ -1,7 +1,8 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "com.licence.gateway.app"
+      "packageName": "com.licence.gateway.app",
+      "microservicePath": "../indoortracker"
     },
     "jhipsterVersion": "6.8.0",
     "applicationType": "gateway",

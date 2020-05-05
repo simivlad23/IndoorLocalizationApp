@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "indoortracker",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "txPower",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "advertistingInterval",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20200505142802",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "beacon",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll",
+    "microserviceName": "indoortracker"
+}
