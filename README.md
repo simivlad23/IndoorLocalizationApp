@@ -10,9 +10,11 @@ To install this example application, run the following commands:
 git clone https://github.com/simivlad23/IndoorLocalizationApp.git
 ```
 
+First time you have to start Eureka Discovery Server and after that you can start the others microservices
+
 1. Start the registry by running `./mvnw ` in the `jhipster-registry` directory.
-1. Start the gateway-app by running `./mvnw ` in the `gateway-app` directory.
-1. Start the indoortracker by running `./mvnw ` in the `indoortracker` directory.
+2. Start the gateway-app by running `./mvnw ` in the `gateway-app` directory.
+3. Start the indoortracker by running `./mvnw ` in the `indoortracker` directory.
 
     ```
     yarn
